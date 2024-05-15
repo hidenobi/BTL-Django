@@ -2,6 +2,7 @@ from djongo import models
 
 # Create your models here.
 class Producer(models.Model):
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=255, null=True)
     slug = models.SlugField(max_length=255, unique=True,
                             help_text='Unique value for product page URL, created from name.', null=True)
@@ -18,6 +19,7 @@ class Producer(models.Model):
     
 
 class Type(models.Model):
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=255, null=True)
     slug = models.SlugField(max_length=255, unique=True,
                             help_text='Unique value for product page URL, created from name.', null=True)
@@ -33,6 +35,7 @@ class Type(models.Model):
         return self.name
 
 class Phone(models.Model):
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=255, unique=True)
     slug = models.SlugField(max_length=255, unique=True,
         help_text='Unique value for product page URL, created from name.', null=True)

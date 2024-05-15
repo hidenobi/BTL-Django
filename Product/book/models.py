@@ -2,6 +2,7 @@ from djongo import models
 
 # Create your models here.
 class Category(models.Model):
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True,
                             help_text='Unique value for product page URL, created from name.', null=True)
@@ -14,6 +15,7 @@ class Category(models.Model):
         return self.name
 
 class Author(models.Model):
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=255)
     address = models.CharField(max_length=255, null=True)
     email = models.EmailField(null=True)
@@ -24,6 +26,7 @@ class Author(models.Model):
         return self.name
 
 class Publisher(models.Model):
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=255)
     address = models.CharField(max_length=255, null=True)
     email = models.EmailField(null=True)
@@ -34,6 +37,7 @@ class Publisher(models.Model):
         return self.name
 
 class Book(models.Model):
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=255, unique=True)
     slug = models.SlugField(max_length=255, unique=True,
         help_text='Unique value for product page URL, created from name.', null=True)

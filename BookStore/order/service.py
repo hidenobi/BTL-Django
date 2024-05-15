@@ -61,6 +61,7 @@ def validate_data(data):
 # API để tạo đơn hàng mới
 @csrf_exempt
 def create_order(request):
+    print("-------------------------------------------------------------------")
     if request.method == 'POST':
         data = json.loads(request.body)
         user_id = data.get('user_id')
@@ -70,7 +71,7 @@ def create_order(request):
         address = data.get('address')
         city = data.get('city')
         code = data.get('code')
-
+        print("TAG-data: "+str(data))
         validation_errors = validate_data(data)
         if validation_errors:
             return JsonResponse(
@@ -90,7 +91,7 @@ def create_order(request):
                 checkout.address=address
                 checkout.city=city
                 checkout.save()
-            else: 
+            else:
                 # Tạo một đối tượng Checkout mới
                 total = 0
                 checkout = Checkout.objects.using('order').create(
@@ -131,10 +132,11 @@ def create_order(request):
                 checkout.total = total
                 checkout.save()
             data = CheckoutSerializer(checkout).data
-                
+            print("-------------------------------------------------------------------")
             return JsonResponse({'status': 'Success', 'status_code': '201', 'message': 'Order created successfully.','data': data}, status=201)
     
     else:
+        print("-------------------------------------------------------------------")
         return JsonResponse({'status': 'Failed', 'status_code': '405', 'message': 'Only POST method is allowed.'}, status=405)
 
 # API để lấy tất cả đơn hàng của một người dùng bằng user_id

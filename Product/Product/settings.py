@@ -16,7 +16,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
@@ -27,7 +26,6 @@ SECRET_KEY = 'django-insecure-g#wxr#9+=j@06@89ian=+q2ntkd(y)f$k+7hso=t^dyi%*g3#l
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -75,7 +73,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Product.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -86,19 +83,19 @@ DATABASES = {
     },
     'book': {
         'ENGINE': 'djongo',
-        'NAME':'library',
+        'NAME': 'book',
         'HOST': 'localhost',
         'PORT': 27017,
     },
     'clothes': {
         'ENGINE': 'djongo',
-        'NAME':'clothes',
+        'NAME': 'clothes',
         'HOST': 'localhost',
         'PORT': 27017,
     },
     'mobile': {
         'ENGINE': 'djongo',
-        'NAME':'mobile',
+        'NAME': 'mobile',
         'HOST': 'localhost',
         'PORT': 27017,
     },
@@ -128,7 +125,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -139,7 +135,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
