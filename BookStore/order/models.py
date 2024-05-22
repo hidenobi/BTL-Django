@@ -8,7 +8,7 @@ import random
 
 #  điền đầy đủ thông tin và xác nhận
 class Checkout(models.Model):
-    id = models.AutoField(primary_key=True,default=1)
+    id = models.IntegerField(primary_key= True)
     # each individual status
     SUBMITTED = 1
     PROCESSED = 2
@@ -40,7 +40,7 @@ class Checkout(models.Model):
 
 # chọn sản phẩm checkout và bấm nút check out
 class OrderItems(models.Model):
-    id = models.AutoField(primary_key=True,default=1)
+    id = models.IntegerField(primary_key=True)
     # cart = models.OneToOneField(Cart, on_delete=models.CASCADE)
     product_slug = models.SlugField(null=True)
     price = models.BigIntegerField(default=0)

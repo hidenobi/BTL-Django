@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Payment(models.Model):
-    id = models.AutoField(primary_key=True,default=1)
+    id = models.IntegerField(primary_key= True)
     bank = models.CharField(max_length=30, null=True)
     checkout = models.BigIntegerField(null=True, blank=True) # one-to-one
     code = models.CharField(max_length=25, null=True)

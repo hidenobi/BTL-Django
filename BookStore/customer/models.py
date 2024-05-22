@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Address(models.Model):
+    id = models.IntegerField(primary_key= True)
     street = models.CharField(max_length=255, null=True)
     district = models.CharField(max_length=255, null=True)
     city = models.CharField(max_length=255, null=True)
@@ -12,6 +13,7 @@ class Address(models.Model):
         return " ".join(self.street, self.district, self.city) 
 
 class Customer(models.Model):
+    id = models.IntegerField(primary_key=True)
     user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True)
     phone = models.CharField(max_length=12, null=True)
     address = models.ForeignKey(Address, on_delete=models.SET_NULL, null=True)
