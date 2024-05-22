@@ -34,7 +34,7 @@ def get_all_order_items_service(url = 'http://127.0.0.1:9995/orders/api/all-orde
 def create_order_service(url = 'http://127.0.0.1:9995/orders/api/order/create', data={}):
     response = requests.post(url, json=data)
     print("TAG-PT: "+str(response))
-    return response.json()
+    return response
 
 def cancel_checkout_service(url = 'http://127.0.0.1:9995/orders/api/checkouts/', user_id=0, code=""):
     url = url + str(user_id) + '/' + str(code) + '/cancel'

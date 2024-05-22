@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Shipment(models.Model):
+    id = models.AutoField(primary_key=True,default=1)
     checkout = models.BigIntegerField(null=True, unique=True)
     code = models.CharField(max_length=15, null=True)
     shipper = models.CharField(max_length=255)

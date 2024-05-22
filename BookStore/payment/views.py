@@ -26,8 +26,8 @@ def get_payment_by_checkoutid_service(url = 'http://127.0.0.1:9995/payment/api/g
 def paymentBank(request):
     context = {
         'page_title': 'payment bank',
-        'mybank': 'LE HONG ANH - 0961148064',
-        'name_bank': 'VPBank',
+        'mybank': '123456789',
+        'name_bank': 'Bank',
     }
     if request.method == 'GET':
         return render(request, 'payment/payment_bank.html', context=context)

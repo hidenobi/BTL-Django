@@ -4,7 +4,7 @@
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="/" class="align-items-center p-2 mb-lg-0 text-white text-decoration-none">
-                <img src="{% static 'images/background_book1.jpg' %}" width="50" height="50">
+                <img src="{% static 'images/background_book.jpg' %}" width="50" height="50">
 <!--                <h3 class="mx-2">Sach3Goc</h3>-->
             </a>
 
@@ -60,12 +60,12 @@
                     <input class="form-control form-control-dark" type="search" placeholder="Search" aria-label="Search"
                            name="keyword" id="result" value="">
                     <button class="btn btn-outline-dark" type="submit" id="search">
-                        <img src="{% static '/images/search.png' %}" height="30" width="30">
+                        <img src="{% static '/images/search3.png' %}" height="30" width="30">
                     </button>
                 </form>
 
                 <button id="recording" class="btn btn-outline-dark">
-                    <img id="imgVoice" src="{% static '/images/transcript.png' %}" alt="voice" height="30"
+                    <img id="imgVoice" src="{% static '/images/transcript1.png' %}" alt="voice" height="30"
                          width="30"></button>
             </div>
 
@@ -128,7 +128,7 @@
         if (recognition) {
             recognition.stop();
             statusRecording = true;
-            imgVoice.src = "{% static 'images/transcript.png' %}"
+            imgVoice.src = "{% static 'images/transcript1.png' %}"
         }
     }
 
